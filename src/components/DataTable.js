@@ -1,25 +1,28 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 
-const DataTable = () => {
+const DataTable = ({ columnTitles, rowTitles, data }) => {
   return (
     <>
       <h2>table</h2>
       <table>
         <tr>
-          <th>undefined</th>
-          <th>country1</th>
-          <th>country2</th>
+          {columnTitles.map((item) => {
+            return <th>{item}</th>;
+          })}
         </tr>
-        <tr>
-          <th>undefined</th>
-          <td>1</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <th>2018</th>
-          <td>3</td>
-          <td>2</td>
-        </tr>
+        {rowTitles.map((item) => {
+          return (
+            <tr>
+              <th>{item}</th>
+              {data[rowTitles.indexOf(item)].map((x) => (
+                <td>{x}</td>
+              ))}
+              <td>2</td>
+            </tr>
+          );
+        })}
+        ;
       </table>
     </>
   );
