@@ -38,6 +38,6 @@ const DataTable = ({ columnTitles, rowTitles, data }) => {
 DataTable.propTypes = {
   columnTitles: PropTypes.arrayOf(PropTypes.string).isRequired,
   rowTitles: PropTypes.arrayOf(PropTypes.string).isRequired,
-  data: PropTypes.arrayOf(PropTypes.string).isRequired,
+  data: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
 };
 export default DataTable;
