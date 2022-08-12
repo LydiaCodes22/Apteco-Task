@@ -6,23 +6,30 @@ const DataTable = ({ columnTitles, rowTitles, data }) => {
     <>
       <h2>table</h2>
       <table>
-        <tr>
-          {columnTitles.map((item) => {
-            return <th>{item}</th>;
-          })}
-        </tr>
-        {rowTitles.map((item) => {
-          return (
-            <tr>
-              <th>{item}</th>
-              {data[rowTitles.indexOf(item)].map((x) => (
-                <td>{x}</td>
-              ))}
-              <td>2</td>
-            </tr>
-          );
-        })}
-        ;
+        <tbody>
+          <tr>
+            {React.Children.toArray(
+              columnTitles.map((item) => {
+                return <th>{item}</th>;
+              })
+            )}
+          </tr>
+          {React.Children.toArray(
+            rowTitles.map((item) => {
+              return (
+                <tr>
+                  <th>{item}</th>
+                  {React.Children.toArray(
+                    data[rowTitles.indexOf(item)].map((x) => {
+                      return <td>{x}</td>;
+                    })
+                  )}
+                </tr>
+              );
+            })
+          )}
+          ;
+        </tbody>
       </table>
     </>
   );
