@@ -4,6 +4,6 @@ import App from "../components/App";
 
 test("the react app renders the title", () => {
   render(<App />);
-  const linkElement = screen.getByText(/apteco task/i);
-  expect(linkElement).toBeInTheDocument();
+  const title = screen.getByText(/apteco task/i);
+  expect(title).toBeInTheDocument();
 });
