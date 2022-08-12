@@ -1,10 +1,12 @@
 import "../styles/App.css";
 import React from "react";
+import DataTable from "./DataTable";
 
 const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">Apteco task</header>
+    <div>
+      <h1>Apteco task</h1>
+      <DataTable />
     </div>
   );
 };

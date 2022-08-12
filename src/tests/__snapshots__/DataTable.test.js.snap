@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the data table matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <table />
+  </div>
+</DocumentFragment>
+`;
